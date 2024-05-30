@@ -16,7 +16,6 @@ export default function Accordian() {
     else copyMultiple.splice(searchIndex,1)
     setMultiple(copyMultiple)
   }
-  console.log(selected,multiple)
   return (
     <div className="wrapper">
       <button onClick={()=>setEnableMultiSelection(!enableMultiSelection)}>{`${enableMultiSelection ? 'Enable' : 'Disable'} Multi Section`}</button>
