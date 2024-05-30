@@ -1,10 +1,10 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
-import Accordian from "./components/accordian";
 
 function App() {
   return (
     <div className="App">
-      <Accordian />
+      <Outlet />
     </div>
   );
 }
