@@ -4,6 +4,8 @@
   width: 100vw;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap:20px;
 }
 .accordian{
   width: 500px;
@@ -20,4 +22,24 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+}
+button{
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid greenyellow;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+button:hover{
+  background-color: rgb(174, 255, 54);
+}
+.content{
+  color: #ffffff;
+  height: auto;
+}
+.arrow{
+  font-size: 30px;
 }

@@ -1,17 +1,22 @@
 import { useState } from "react";
-import { FaPlus } from "react-icons/fa";
-import { FaMinus } from "react-icons/fa6";
+import { IoMdArrowDropdownCircle, IoMdArrowDropupCircle } from "react-icons/io";
+
 import data from "./data";
-import './styles.css'
+import "./styles.css";
 
 export default function Accordian() {
   const [selected, setSelected] = useState(null);
+  const [enableMultiSelection,setEnableMultiSelection] = useState(false);
+  const [multiple,setMultiple] = useState([])
+
+
   const handleSingleSelection = (getCurrentId) => {
-    setSelected(getCurrentId === selected ? null : getCurrentId)
+    setSelected(getCurrentId === selected ? null : getCurrentId);
   };
-  console.log(selected)
+  console.log(selected);
   return (
     <div className="wrapper">
+      <button>Enable Multi Section</button>
       <div className="accordian">
         {data && data.length > 0 ? (
           data.map((dataItem) => (
@@ -22,15 +27,16 @@ export default function Accordian() {
               >
                 <h3>{dataItem.question}</h3>
                 <span>
-                  {selected === dataItem.id ? <FaMinus />  : <FaPlus />}
-
+                  {selected === dataItem.id ? (
+                    <IoMdArrowDropdownCircle className="arrow" />
+                  ) : (
+                    <IoMdArrowDropupCircle className="arrow" />
+                  )}
                 </span>
               </div>
-              {
-                selected === dataItem.id ?
+              {selected === dataItem.id ? (
                 <div className="content">{dataItem.answer}</div>
-                : null
-              }
+              ) : null}
             </div>
           ))
         ) : (
