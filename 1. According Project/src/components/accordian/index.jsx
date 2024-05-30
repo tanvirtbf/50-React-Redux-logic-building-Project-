@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
+import { FaMinus } from "react-icons/fa6";
 import data from "./data";
+import './styles.css'
 
 export default function Accordian() {
   const [selected, setSelected] = useState(null);
@@ -20,11 +22,12 @@ export default function Accordian() {
               >
                 <h3>{dataItem.question}</h3>
                 <span>
-                  <FaPlus />
+                  {selected === dataItem.id ? <FaMinus />  : <FaPlus />}
+
                 </span>
               </div>
               {
-                selected === dataItem.id ?   
+                selected === dataItem.id ?
                 <div className="content">{dataItem.answer}</div>
                 : null
               }

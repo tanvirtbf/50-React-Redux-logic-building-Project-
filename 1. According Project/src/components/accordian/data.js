@@ -1,27 +1,33 @@
 const data = [
   {
-    id  : '1',
-    question: "What are accordion components?",
+    id: "1",
+    question: "How much is the delivery Fee ?",
     answer:
-      "Accordion components are user interface elements used for organizing and presenting content in a collapsible manner. They typically consist of a header, content, and an expand/collapse action.",
+      "Delivery Fee Depends on area basis if you are a seller and willing to cooperate with us we can offer you the best rate for that you can contact our support team join@ramnodeqa.com or WhatsApp7476 9222",
   },
   {
-    id  : '2',
-    question: "What are they used for?",
+    id: "2",
+    question: "what is the delivery process ?",
     answer:
-      "They are commonly employed in various contexts, including FAQs, product descriptions, navigation menus, settings panels, and data tables, to save screen space and provide a structured and user-friendly interface for presenting information or options.",
+      "There are two types of delivery (regular & express )available right now. The first one is regular delivery which is within 24h to 72h but in most cases, its the next day upon receiving the goods from your doorstep the rate is cheaper than the express which is processed within 8 hours upon received from your doorstep.",
   },
   {
-    id  : '3',
-    question: "Accordion as a musical instrument",
+    id: "3",
+    question: "do you provide service for small business ?",
     answer:
-      "The accordion is a musical instrument with a keyboard and bellows. It produces sound by air passing over reeds when the player expands or compresses the bellows, used in various music genres.",
+      "Yes, our service is designed for small businesses, we help the e-commerce business grow in many dimensions. we make sure your delivery is on time, processing, and quick payment.",
   },
   {
-    id  : '4',
-    question: "Can I create an accordion component with a different framework?",
+    id: "4",
+    question: "how can i get my payment ?",
     answer:
-      "Yes of course, it is very possible to create an accordion component with another framework.",
+      "Payment will be made on a weekly basis. you will have a dedicated dashboard where you can see all the updates.",
+  },
+  {
+    id: "5",
+    question: "what kinds of products you can delivery ?",
+    answer:
+      "any legal goods can be delivered by us in small packages to the medium boxes or 3pl we can give you complete logistics support.",
   },
 ];
 
