@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { IoMdArrowDropdownCircle, IoMdArrowDropupCircle } from "react-icons/io";
-
 import data from "./data";
 import "./styles.css";
-
 export default function Accordian() {
   const [selected, setSelected] = useState(null);
   const [enableMultiSelection,setEnableMultiSelection] = useState(false);
   const [multiple,setMultiple] = useState([]);
-
-
   const handleSingleSelection = (getCurrentId) => {
     setSelected(getCurrentId === selected ? null : getCurrentId);
   };
@@ -23,7 +19,7 @@ export default function Accordian() {
   console.log(selected,multiple)
   return (
     <div className="wrapper">
-      <button onClick={()=>setEnableMultiSelection(!enableMultiSelection)}>Enable Multi Section</button>
+      <button onClick={()=>setEnableMultiSelection(!enableMultiSelection)}>{`${enableMultiSelection ? 'Enable' : 'Disable'} Multi Section`}</button>
       <div className="accordian">
         {data && data.length > 0 ? (
           data.map((dataItem) => (

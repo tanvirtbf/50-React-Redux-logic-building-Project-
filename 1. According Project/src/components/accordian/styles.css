@@ -35,6 +35,7 @@ button{
 }
 button:hover{
   background-color: rgb(174, 255, 54);
+  color:blue;
 }
 .content{
   color: #ffffff;
