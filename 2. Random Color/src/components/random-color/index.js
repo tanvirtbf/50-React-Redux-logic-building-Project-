@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+import { useEffect } from "react";
 
 const RandomColor = () => {
   const [colorType, setColorType] = useState("hex");
@@ -8,7 +9,6 @@ const RandomColor = () => {
   function randomHex(length) {
     return Math.floor(Math.random() * length);
   }
-
   const generateHexColor = () => {
     const hex = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
     let hexColor = "#";
@@ -25,6 +25,14 @@ const RandomColor = () => {
     setColor(`rgb(${r},${g},${b})`);
     console.log(color);
   };
+
+  useEffect(()=> {
+    if(colorType === 'hex') {
+      generateHexColor()
+    }else if(colorType === 'rgb'){
+      generateRgbColor()
+    }
+  },[colorType])
 
   return (
     <>
