@@ -8,6 +8,7 @@ import "./index.css";
 import App from "./App";
 import Accordian from "./components/accordian";
 import Home from "./components/home/Home";
+import SampleAccordian from "./components/sampleAccording";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/according-project",
         element: <Accordian />,
+      },
+      {
+        path: "/sample-according",
+        element: <SampleAccordian />,
       },
     ],
   },

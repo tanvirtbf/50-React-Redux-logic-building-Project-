@@ -15,7 +15,6 @@ export default function Accordian() {
     if(searchIndex === -1) copyMultiple.push(getCurrentId)
     else copyMultiple.splice(searchIndex,1)
     setMultiple(copyMultiple)
-    console.log('hello')
   }
   return (
     <div className="wrapper">
