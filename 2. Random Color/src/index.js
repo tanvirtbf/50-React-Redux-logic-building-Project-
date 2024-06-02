@@ -8,6 +8,7 @@ import "./index.css";
 import App from "./App";
 import Home from "./components/home";
 import RandomColor from "./components/random-color";
+import StarRating from "./components/star-rating";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         path: "/random-color",
         element: <RandomColor />,
       },
+      {
+        path:"/star-rating",
+        element:<StarRating />,
+      }
     ],
   },
 ]);
