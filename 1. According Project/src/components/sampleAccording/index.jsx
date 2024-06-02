@@ -13,11 +13,11 @@ export default function SampleAccordian() {
   };
   const doubleClick = (id) => {
     const multiArr = [...multiple];
-    const searchIndex = multiArr.indexOf(id)
-    if(searchIndex === -1) multiArr.push(id)
-      else multiArr.splice(searchIndex,1)
-    setMultiple(multiArr)
-    console.log(multiArr)
+    const searchIndex = multiArr.indexOf(id);
+    if (searchIndex === -1) multiArr.push(id);
+    else multiArr.splice(searchIndex, 1);
+    setMultiple(multiArr);
+    console.log(multiArr);
   };
 
   return (
@@ -48,9 +48,13 @@ export default function SampleAccordian() {
                   </span>
                 </div>
                 <div className="items-text">
-                  {selected === item.id
-                    ? "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-                    : null}
+                  {isEnable
+                    ? multiple.indexOf(item.id) !== -1 && (
+                        <div className="content">{item.answer}</div>
+                      )
+                    : selected === item.id && (
+                        <div className="content">{item.answer}</div>
+                      )}
                 </div>
               </div>
             ))
