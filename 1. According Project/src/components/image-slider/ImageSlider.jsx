@@ -37,8 +37,6 @@ export default function ImageSlider({ url, limit, page }) {
     }
   }, [url]);
 
-  console.log(images);
-
   if (loading) {
     return <div>Loading Data ! Please Wait</div>;
   }
