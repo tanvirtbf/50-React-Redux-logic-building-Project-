@@ -16,9 +16,14 @@ const SampleRandomColor = () => {
       hexColor += hex[generateHex(hex.length)]
     }
     setColor(hexColor)
+    console.log(color)
   }
   const whatRgb = () => {
-
+    let r = generateHex(255)
+    let g = generateHex(255)
+    let b = generateHex(255)
+    setColor(`rgb(${r},${g},${b})`)
+    console.log(color)
   }
   return (
     <div className="random-color-div" style={{background:color}}>
