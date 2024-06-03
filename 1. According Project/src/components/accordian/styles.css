@@ -23,18 +23,19 @@
   align-items: center;
   cursor: pointer;
 }
-button{
+.acc-btn{
   padding: 20px;
-  background-color: #ffffff;
+  background-color: black;
   border: 1px solid greenyellow;
   border-radius: 5px;
   font-weight: 500;
   font-size: 22px;
   cursor: pointer;
   transition: 0.4s;
+  color:white;
 }
-button:hover{
-  background-color: rgb(174, 255, 54);
+.wrapper .acc-btn:hover{
+  background-color: rgb(143, 236, 3);
   color:blue;
 }
 .content{

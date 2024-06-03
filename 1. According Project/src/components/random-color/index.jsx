@@ -43,9 +43,10 @@ const RandomColor = () => {
         }}
       >
         <div className="divBtn">
-          <button onClick={() => setColorType("hex")}>Create HEX Color</button>
-          <button onClick={() => setColorType("rgb")}>Create RGB Color</button>
+          <button className="ran-btn" onClick={() => setColorType("hex")}>Create HEX Color</button>
+          <button className="ran-btn" onClick={() => setColorType("rgb")}>Create RGB Color</button>
           <button
+            className="ran-btn" 
             onClick={colorType === "hex" ? generateHexColor : generateRgbColor}
           >
             Generate Random Color
