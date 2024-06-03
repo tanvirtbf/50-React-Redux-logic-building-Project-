@@ -1,0 +1,11 @@
+.random-color-div{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.random-color-div div{
+  display: flex;
+  gap: 20px;
+}

@@ -10,6 +10,7 @@ import Accordian from "./components/accordian";
 import Home from "./components/home/Home";
 import RandomColor from "./components/random-color";
 import SampleAccordian from "./components/sampleAccording";
+import SampleRandomColor from "./components/sampleRandomColor";
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:'/sample-accordian',
         element:<SampleAccordian />,
+      },
+      {
+        path:'/sample-random-color',
+        element:<SampleRandomColor />
       }
     ],
   },
