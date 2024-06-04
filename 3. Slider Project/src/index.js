@@ -12,6 +12,7 @@ import RandomColor from "./components/random-color";
 import SampleAccordian from "./components/sampleAccording";
 import SampleRandomColor from "./components/sampleRandomColor";
 import Slider from "./components/image-slider";
+import SampleImageSlider from "./components/sample";
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path:'/slider',
         element:<Slider />,
+      },
+      {
+        path:'/sample-slider',
+        element:<SampleImageSlider />,
       }
     ],
   },
