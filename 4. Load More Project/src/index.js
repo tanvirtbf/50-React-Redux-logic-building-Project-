@@ -7,6 +7,7 @@ import {
 import "./index.css";
 import App from "./App";
 import Home from "./components/home/Home";
+import LoadMore from "./components/load-more-data";
 
 
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path:"/load-more",
+        element:<LoadMore />,
+      }
     ],
   },
 ]);
