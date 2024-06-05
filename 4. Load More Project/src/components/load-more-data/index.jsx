@@ -1,46 +1,56 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import './styles.css'
 
 function LoadMore() {
-  const [loading,setLoading] = useState(false)
-  const [products,setProducts] = useState([])
-  const [count,setCount] = useState(0)
+  const [loading, setLoading] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [count, setCount] = useState(0);
 
-  async function fetchProducts(){
+  async function fetchProducts() {
     try {
-      setLoading(true)
-      const res = await fetch(`https://dummyjson.com/products?limit=20&skip=${count === 0 ? 0 : count * 20}`)
+      setLoading(true);
+      const res = await fetch(
+        `https://dummyjson.com/products?limit=20&skip=${
+          count === 0 ? 0 : count * 20
+        }`
+      );
       const result = await res.json();
-      console.log(result)
+      console.log(result);
 
-      if(result && result.products && result.products.length){
-        setProducts(result.products)
-        setLoading(false)
+      if (result && result.products && result.products.length) {
+        setProducts(result.products);
+        setLoading(false);
       }
-
     } catch (e) {
-      console.log(e)
-      setLoading(false)
+      console.log(e);
+      setLoading(false);
     }
   }
-  useEffect(()=>{
-    fetchProducts()
-  },[])
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
-  if(loading){
-    return <h1>Loading data...</h1>
+  if (loading) {
+    return <h1>Loading data...</h1>;
   }
 
   return (
-    <div className='container'>
-      <div>
-        {
-          products && products.length ? products.map((item) => <div key={item.id}>
-
-          </div>) : null
-        }
+    <div className="load-more-container">
+      <div className="product-container">
+        {products && products.length
+          ? products.map((item) => (
+              <div className="product" key={item.id}>
+                <img src={item.thumbnail} alt={item.title} />
+                <p>{item.title}</p>
+              </div>
+            ))
+          : null}
+      </div>
+      <div className="button-container">
+        <button onClick={()=> setCount(count + 1)}>Load More Products</button>
       </div>
     </div>
-  )
+  );
 }
 
-export default LoadMore
+export default LoadMore;
