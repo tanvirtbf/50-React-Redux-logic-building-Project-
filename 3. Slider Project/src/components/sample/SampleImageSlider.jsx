@@ -55,7 +55,7 @@ export default function SampleImageSlider({ url, limit, page }) {
         <BsArrowRightCircleFill onClick={handleNext} className="arrows arrow-right" />
         <span className="circle-indicators">
           {
-            images && images.length ? images.map((_,index)=> <button key={index} className="current-indicator inactive-indicator"></button>) : null
+            images && images.length ? images.map((_,index)=> <button key={index} className={currentSlide === index ? "current-indicator" : "current-indicator inactive-indicator" } onClick={()=> setCurrentSlide(index)}></button>) : null
           }
         </span>
       </div>
