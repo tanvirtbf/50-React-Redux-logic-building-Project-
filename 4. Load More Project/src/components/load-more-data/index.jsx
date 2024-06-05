@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function LoadMore() {
   const [loading,setLoading] = useState(false)
   const [products,setProducts] = useState([])
-  const [count,setCount] = useState()
+  const [count,setCount] = useState(0)
 
   async function fetchProducts(){
     try {
