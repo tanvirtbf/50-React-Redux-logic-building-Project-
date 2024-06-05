@@ -26,3 +26,17 @@
   width: 200px;
   height: 200px;
 }
+.load-more-btn{
+  padding:20px;
+  background-color: aqua;
+  border: none;
+  border-radius: 5px;
+  color: rgb(163, 120, 120);
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+} 
+.load-more-btn:hover{
+  background-color: blueviolet;
+  color: white;
+}

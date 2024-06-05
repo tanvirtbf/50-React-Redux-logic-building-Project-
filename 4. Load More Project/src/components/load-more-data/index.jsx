@@ -48,7 +48,7 @@ function LoadMore() {
           : null}
       </div>
       <div className="button-container">
-        <button onClick={()=> setCount(count + 1)}>Load More Products</button>
+        <button className="load-more-btn" onClick={()=> setCount(count + 1)}>Load More Products</button>
       </div>
     </div>
   );
