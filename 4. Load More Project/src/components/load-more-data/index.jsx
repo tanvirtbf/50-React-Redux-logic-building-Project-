@@ -18,7 +18,7 @@ function LoadMore() {
       console.log(result);
 
       if (result && result.products && result.products.length) {
-        setProducts(result.products);
+        setProducts((prevData) => [...prevData, ...result.products]);
         setLoading(false);
       }
     } catch (e) {
@@ -28,7 +28,7 @@ function LoadMore() {
   }
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [count]);
 
   if (loading) {
     return <h1>Loading data...</h1>;
