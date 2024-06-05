@@ -4,8 +4,16 @@ import { useEffect, useState } from "react";
 
 export default function SampleImageSlider({ url, limit, page }) {
   const [images,setImages] = useState([])
+  const [currentSlide,setCurrentSlide] = useState(0)
   const [loading,setLoading] = useState(false)
   const [error,setError] = useState("")
+
+  const handlePrevious = () => {
+    setCurrentSlide(currentSlide === 0 ? images.length - 1 : currentSlide - 1)
+  }
+  const handleNext = () => {
+    setCurrentSlide(currentSlide === images.length -1 ? 0 : currentSlide + 1)
+  }
 
   async function fetchImage(getUrl){
     try {
@@ -39,9 +47,9 @@ export default function SampleImageSlider({ url, limit, page }) {
     <div className="slider-main">
       <h1>Image Slider Project</h1>
       <div className="container">
-        <BsArrowLeftCircleFill className="arrows arrow-left" />
+        <BsArrowLeftCircleFill onClick={handlePrevious} className="arrows arrow-left" />
         <img alt={"img"} src={""} />
-        <BsArrowRightCircleFill className="arrows arrow-right" />
+        <BsArrowRightCircleFill onClick={handleNext} className="arrows arrow-right" />
         <span className="circle-indicators">
           <button></button>
         </span>
