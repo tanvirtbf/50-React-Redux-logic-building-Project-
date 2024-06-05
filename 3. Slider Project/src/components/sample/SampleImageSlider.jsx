@@ -50,11 +50,13 @@ export default function SampleImageSlider({ url, limit, page }) {
       <div className="container">
         <BsArrowLeftCircleFill onClick={handlePrevious} className="arrows arrow-left" />
         {
-          images && images.length ? images.map((imageItem,index)=> <img key={imageItem.id} src={imageItem.download_url} alt={imageItem.download_url} />) : <h1>Image Not Found!</h1>
+          images && images.length ? images.map((imageItem,index)=> <img key={imageItem.id} src={imageItem.download_url} alt={imageItem.download_url} className={currentSlide === index ? 'current-image' : 'hide-current-image'} />) : <h1>Image Not Found!</h1>
         }
         <BsArrowRightCircleFill onClick={handleNext} className="arrows arrow-right" />
         <span className="circle-indicators">
-          <button></button>
+          {
+            images && images.length ? images.map((_,index)=> <button key={index} className="current-indicator inactive-indicator"></button>) : null
+          }
         </span>
       </div>
     </div>
