@@ -6,7 +6,7 @@ export default function SampleImageSlider({ url, limit, page }) {
   const [images,setImages] = useState([])
   const [currentSlide,setCurrentSlide] = useState(0)
   const [loading,setLoading] = useState(false)
-  const [error,setError] = useState("")
+  const [error,setError] = useState(null)
 
   const handlePrevious = () => {
     setCurrentSlide(currentSlide === 0 ? images.length - 1 : currentSlide - 1)
@@ -18,11 +18,12 @@ export default function SampleImageSlider({ url, limit, page }) {
   async function fetchImage(getUrl){
     try {
       setLoading(true)
-      const res = await fetch(`${url}?page=${page}&limit=${limit}`)
+      const res = await fetch(`${getUrl}?page=${page}&limit=${limit}`)
       const data = await res.json();
       if(data){
         setImages(data)
         setLoading(false)
+        console.log(images)
       }
     } catch (e) {
       setError("Error Found!")
@@ -48,7 +49,9 @@ export default function SampleImageSlider({ url, limit, page }) {
       <h1>Image Slider Project</h1>
       <div className="container">
         <BsArrowLeftCircleFill onClick={handlePrevious} className="arrows arrow-left" />
-        <img alt={"img"} src={""} />
+        {
+          images && images.length ? images.map((imageItem,index)=> <img key={imageItem.id} src={imageItem.download_url} alt={imageItem.download_url} />) : <h1>Image Not Found!</h1>
+        }
         <BsArrowRightCircleFill onClick={handleNext} className="arrows arrow-right" />
         <span className="circle-indicators">
           <button></button>
