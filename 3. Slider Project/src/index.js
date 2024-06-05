@@ -13,6 +13,7 @@ import SampleAccordian from "./components/sampleAccording";
 import SampleRandomColor from "./components/sampleRandomColor";
 import Slider from "./components/image-slider";
 import SampleImageSlider from "./components/sample";
+import SampleSlider from "./components/sample";
 
 
 const router = createBrowserRouter([
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/sample-slider',
-        element:<SampleImageSlider />,
+        element:<SampleSlider />,
       }
     ],
   },
