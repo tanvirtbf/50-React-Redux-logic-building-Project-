@@ -13,13 +13,12 @@ export default function SampleImageSlider({ url, limit, page }) {
       const res = await fetch(`${url}?page=${page}&limit=${limit}`)
       const data = await res.json();
       if(data){
-        setLoading(false)
         setImages(data)
-        setError("")
+        setLoading(false)
       }
     } catch (e) {
-      setLoading(false)
       setError("Error Found!")
+      setLoading(false)
     }
   }
 
