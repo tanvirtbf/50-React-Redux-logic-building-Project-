@@ -41,7 +41,8 @@ function LoadMore() {
           ? products.map((item) => (
               <div className="product" key={item.id}>
                 <img src={item.thumbnail} alt={item.title} />
-                <p>{item.title}</p>
+                <h4>{item.title}</h4>
+                <p>Price : {item.price}</p>
               </div>
             ))
           : null}
